@@ -11,12 +11,12 @@ import daos.GenericDAO;
 public class AdministradorDAOImpl extends GenericDAO implements AdministradoresDAO{
 
 	@Override
-	public boolean identificarAdministrador(String email, String pass) {
+	public boolean identificarAdministrador(String usuario, String pass) {
 		boolean identificado = false;
 		conectar();
 		try {
-			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.IDENTIFICACION_ADMIN);
-			ps.setString(1, email);
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.IDENTIFICACION_ADMINISTRADOR);
+			ps.setString(1, usuario);
 			ps.setString(2, pass);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
