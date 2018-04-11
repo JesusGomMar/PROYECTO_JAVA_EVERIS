@@ -1,5 +1,9 @@
 package daosImpl;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import constantesSQL.ConstantesSQL;
 import daos.EmpleadosDAO;
 import daos.GenericDAO;
 
