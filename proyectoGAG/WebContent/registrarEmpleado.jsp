@@ -10,7 +10,7 @@
 <a href = "index.jsp">volver a inicio</a><br/>
 
 Introduce los datos de Empleado:<br/>
-<form action="ServletRegistroEmpleadoAdmin" method="post" enctype="multipart/form-data" >
+<form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >
 
 <div>
 	<label for="nombre">Nombre</label></br>
