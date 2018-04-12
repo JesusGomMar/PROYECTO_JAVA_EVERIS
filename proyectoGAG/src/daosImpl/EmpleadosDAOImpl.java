@@ -61,8 +61,6 @@ public class EmpleadosDAOImpl extends GenericDAO implements EmpleadosDAO{
 			System.out.println("la sql de insercion de empleado esta mal");
 			System.out.println(e.getMessage());
 		}
-		desconectar();
-		
-	}
-	
+		desconectar();		
+	}	
 }

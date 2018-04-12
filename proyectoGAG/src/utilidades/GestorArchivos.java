@@ -8,13 +8,15 @@ import java.io.InputStream;
 import javax.servlet.http.Part;
 
 public class GestorArchivos {	
-	private static final String CARPETA_SUBIDAS = "juguetes";
+	private static final String CARPETA_FOTOS = "fotos";
 	
 	public static String rutaArchivo(int id){
-		String ruta = CARPETA_SUBIDAS+File.separator+id+".jpg";
+		String ruta = CARPETA_FOTOS+File.separator+id+".jpg";
 		//como estamos trabajando en local, para ver los resultados
 		//debo dar rutas absolutas
-		File f = new File(ruta);		
+		//File f = new File(ruta);	
+		File f = new File(ruta);
+		System.out.println(f.getAbsolutePath());
 		return f.getAbsolutePath();
 	}
 	
@@ -24,13 +26,13 @@ public class GestorArchivos {
 			System.out.println("no hay archivo,no guardo imagen");
 			return;
 		}
-		File carpetaSubidas = new File(CARPETA_SUBIDAS);
-		if(!carpetaSubidas.exists()){
-			carpetaSubidas.mkdir();
+		File carpetaFotos = new File(CARPETA_FOTOS);
+		if(!carpetaFotos.exists()){
+			carpetaFotos.mkdir();
 		}
 		try {
 			InputStream is = archivo.getInputStream();
-			FileOutputStream fos = new FileOutputStream(CARPETA_SUBIDAS+File.separator+ruta);
+			FileOutputStream fos = new FileOutputStream(CARPETA_FOTOS+File.separator+ruta);
 			byte[] leidos = new byte[1024];
 			while((is.read(leidos))!=-1){
 				fos.write(leidos);
