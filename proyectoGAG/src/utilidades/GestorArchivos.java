@@ -11,10 +11,7 @@ public class GestorArchivos {
 	private static final String CARPETA_FOTOS = "fotos";
 	
 	public static String rutaArchivo(int id){
-		String ruta = CARPETA_FOTOS+File.separator+id+".jpg";
-		//como estamos trabajando en local, para ver los resultados
-		//debo dar rutas absolutas
-		//File f = new File(ruta);	
+		String ruta = CARPETA_FOTOS+File.separator+id+".jpg";	
 		File f = new File(ruta);
 		System.out.println(f.getAbsolutePath());
 		return f.getAbsolutePath();
@@ -22,7 +19,7 @@ public class GestorArchivos {
 	
 	//metodo que sobre un archivo subido le asigna una ruta
 	public static void guardarArchivo(Part archivo, String ruta){
-		if(archivo == null){
+		if(archivo == null || archivo.getSize()==0){
 			System.out.println("no hay archivo,no guardo imagen");
 			return;
 		}

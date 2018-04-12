@@ -52,7 +52,7 @@ public class EmpleadosDAOImpl extends GenericDAO implements EmpleadosDAO{
 			if(rs.next()){
 				int idGenerado = rs.getInt(1); //dame el primer elemento que devuelve getGeneratedKeys
 				System.out.println("id generado en bd: " + idGenerado);
-				//guardar la imagen del producto en una carpeta 
+				//guardar la foto del empleado en una carpeta 
 				//nombrada con el mismo id generado
 				GestorArchivos.guardarArchivo(empleado.getImagenSubida(), idGenerado+".jpg");
 			}

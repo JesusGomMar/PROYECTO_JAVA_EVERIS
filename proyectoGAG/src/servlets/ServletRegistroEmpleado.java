@@ -32,5 +32,4 @@ public class ServletRegistroEmpleado extends HttpServlet {
 		empleadosDAO.registrarEmpleado(empleado);
 		request.getRequestDispatcher("registroEmpleadoOk.jsp").forward(request, response);
 	}
-
 }

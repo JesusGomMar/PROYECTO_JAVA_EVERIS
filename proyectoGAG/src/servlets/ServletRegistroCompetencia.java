@@ -24,5 +24,4 @@ public class ServletRegistroCompetencia extends HttpServlet {
 		
 		request.getRequestDispatcher("registroCompetenciaOk.jsp").forward(request, response);
 	}
-
 }

@@ -20,7 +20,6 @@ public class AdministradoresDAOImpl extends GenericDAO implements Administradore
 			ps.setString(2, pass);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
-				//si este if se cumple, eso es que he obtenido un resultado de base de datos
 				admin = true;
 			}
 		} catch (SQLException e) {

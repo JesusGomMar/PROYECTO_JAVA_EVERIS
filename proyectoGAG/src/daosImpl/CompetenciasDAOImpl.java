@@ -25,5 +25,4 @@ public class CompetenciasDAOImpl extends GenericDAO implements CompetenciasDAO{
 		}
 		desconectar();
 	}
-
 }
