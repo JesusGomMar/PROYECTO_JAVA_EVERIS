@@ -3,6 +3,8 @@ package daosImpl;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import utilidades.GestorArchivos;
 
@@ -10,6 +12,7 @@ import com.mysql.jdbc.Statement;
 
 import modelo.Empleado;
 import constantesSQL.ConstantesSQL;
+import constantesSQL.SQLDinamicas;
 import daos.EmpleadosDAO;
 import daos.GenericDAO;
 
