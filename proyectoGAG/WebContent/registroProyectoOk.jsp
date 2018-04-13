@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Log Out</title>
+<title>Registro Proyecto OK</title>
 </head>
 <body>
 
-<jsp:include page="login.jsp"></jsp:include>
-<br/>
-Desconexión realizada correctamente
+Gracias por Registrar un Proyecto<br/>
+<a href="index.jsp">volver al Menu</a>
 
 </body>
 </html>

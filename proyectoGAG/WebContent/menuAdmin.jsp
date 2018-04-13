@@ -6,10 +6,11 @@
 </c:if>
 
 <!-- hacemos las llamadas a las diferentes opciones de administracion -->
-<a href = "ServletListadoEmpleados">Gestionar Empleados</a>&nbsp;
-<a href = "ServletListadoProyectos">Gestionar Proyectos</a>&nbsp; </br>
-<a href = "ServletListadoCompetencias">Gestionar Competencias</a>&nbsp; </br>
-<a href = "ServletRegistroCompetencias">Registrar Competencias</a>&nbsp; </br>
-<a href = "registroEmpleado.jsp">Registrar Empleado</a> &nbsp; </br>
-<a href = "registroProyecto.jsp">Registrar Proyecto</a> &nbsp; </br>
+<!-- para registrar proyecto mandamos a un jsp que mandara todo a un servlet -->
+<a href = "registrarProyecto.jsp">Crear Proyecto</a>&nbsp; </br>
+<!-- para listar y gestionar proyectos llamamos a un servlet q los lista y vuelca en gestionarProyectos.jsp -->
+<a href = "ServletListadoProyectos">Listado Proyectos</a>&nbsp; </br>
+
+<!-- <a href = "ServletListadoCompetencias">Gestionar Competencias</a>&nbsp; </br> opcional -->
+
 <a href = "ServletLogOut">SALIR</a>&nbsp; </br>

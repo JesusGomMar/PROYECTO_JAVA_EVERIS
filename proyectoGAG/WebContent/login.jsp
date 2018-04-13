@@ -16,6 +16,7 @@ Introduce tus datos para identificarte: <br/>
 	Usuario: <input type="text" name="campoUsuario"><br/>
 	Contraseña: <input type="password" name="campoPass"><br/>
 	<input type="submit" value="ENTRAR"/>
+	<a href = "ServletPreparaRegistroEmpleado">Registrarse</a>&nbsp;</br>
 </form>
 
 </body>
