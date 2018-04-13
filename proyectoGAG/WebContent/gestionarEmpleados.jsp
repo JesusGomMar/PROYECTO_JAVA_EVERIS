@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<jsp:include page="menuAdmin.jsp"></jsp:include>
+<%-- <jsp:include page="menuAdmin.jsp"></jsp:include> --%>
 
 <c:forEach items="${empleados}" var="empleado">
 

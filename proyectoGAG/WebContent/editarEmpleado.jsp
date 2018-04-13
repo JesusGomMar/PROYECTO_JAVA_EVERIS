@@ -9,13 +9,13 @@
 </head>
 <body>
 
-<jsp:include page="menuEmpleado.jsp"></jsp:include>
- datos de Empleado:<br/>
+<%-- <jsp:include page="menuEmpleado.jsp"></jsp:include> --%>
+ Datos de Empleado:<br/>
  
  <form action="ServletEditarEmpleado" method="post" enctype="multipart/form-data" >
 
 <div>
-	<img src="${empleadoAEditar.rutaImagen}"  height = "200" />
+	<img src="${empleadoAEditar.rutaImagen}"  height = "200" /><br>
 	<input type="file" id="imagen" name= "campoImagen">
 </div>
 
@@ -29,13 +29,80 @@
 </div>
 
 <div>
+	<label for="proyecto">Proyecto</label></br>
+	<input type="text" size="30" id="proyecto" name="campoProyecto" value="${empleadoAEditar.proyecto}"/>
+</div>
+
+<div>
 	<label for="usuario">Usuario</label></br>
 	<input type="text" size="30" id="usuario "name="campoUsuario" value="${empleadoAEditar.login}">	
 </div>
+
 <div>
-	<label for="password">Password</label></br>
-	<input type="password" size="30" id="password "name="campoPassword" value="${empleadoAEditar.password}">	
+	<label for="disponibilidad">Disponibilidad Horaria</label>
+	<select name="campoCompetencia_0" onchange="listarDisponibilidad(this);"><br>
+	<p id="disponibilidad">
+		<option value = "0" checked>Selecciona disponibilidad</option>
+
+    	<c:forEach items="${disponibilidades}" var="disponibilidad" >
+       		 <option value="${disponibilidad.id}">${disponibilidad.nombre}</option>
+    	</c:forEach>
+    </p>
+    
+</select><br>
 </div>
+
+<div id="listadoDisponibilidad">Disponibilidad horaria:<br>
+		<c:forEach items="${disponibilidad}" var="disponibilidad_empl" >
+       		 <p value="${disponibilidad_empl.id}" action= "ServletBorrarCompetencia">${disponibilidad_empl.nombre}</p>
+       		 <input type="submit" value= "Borrar"/>
+		</c:forEach>
+
+ </div>
+
+<div>
+	<label for="transversales">Competencias Transversales:</label>
+	<select name="campoCompetencia_" onchange="listarTransversales(this);"></br>
+	<p id="transversales">
+		<option value = "0" checked>Selecciona Competencias</option>
+	
+   		<c:forEach items="${competencias}" var="competencia" >
+        	<option value="${competencia.id}">${competencia.nombre}</option>
+    	</c:forEach>
+    </p>
+    
+</select><br>
+</div>
+
+<div id="listadoTransversales">Competencias Transversales:<br> 
+		<c:forEach items="${competencia}" var="competencia_empl" >
+       		 <p value="${competencia_empl.id}" action= "ServletBorrarCompetencia" >${competencia_empl.nombre}</p>
+       		 <input type="submit" value= "Borrar"/>
+		</c:forEach>
+</div>
+
+<div>
+	<label for="conocimientos">Conocimientos</label>
+	<select name="campoCompetencia_" onchange="listarConocimientos(this);"></br>
+	<p id="conocimientos">
+		<option value = "0" checked>Selecciona Conocimientos</option>
+	
+    	<c:forEach items="${conocimientos}" var="conocimiento" >
+       		 <option value="${conocimiento.id}">${conocimiento.nombre}</option>
+    	</c:forEach>
+    </p>
+    
+</select><br>
+</div>
+
+<div id="listadoConocimientos">Conocimientos:<br> 
+		<c:forEach items="${conocimiento}" var="categoria" >
+       		 <p value="${conocimiento_empl.id}" action= "ServletBorrarCompetencia">${conocimiento_empl.nombre}
+       		 <input type="submit" value= "Borrar"/>
+       		 </p>
+		</c:forEach>
+</div>
+
 
 <div>
 	<label for="comentario">Comentario</label></br>
@@ -49,6 +116,6 @@
 
 </form>
  
- 
+ <script src="./js/js.js"></script>
 </body>
 </html>
