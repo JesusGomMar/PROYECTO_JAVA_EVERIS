@@ -1,5 +1,7 @@
 package daos;
 
+import java.util.List;
+
 import modelo.Empleado;
 
 public interface EmpleadosDAO {
