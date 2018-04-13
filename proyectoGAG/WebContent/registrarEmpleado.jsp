@@ -37,22 +37,60 @@ Introduce los datos de Empleado:<br/>
 </div>
 
 <div>
-	<label for="categorias">Categorias</label></br>
-	Selecciona una categoria: <select name="campoCompetencia_0" onchange="listarCategorias(this);">
-	<p id="categoria"></p>
-		<option value = "0" checked>selecciona una opcion</option>
-		<option value = "coche">coche</option>
-		<option value = "avion">avion</option>
-		<option value = "barco">barco</option>
+	<label for="disponibilidad">Disponibilidad Horaria</label>
+	<select name="campoCompetencia_0" onchange="listarDisponibilidad(this);"><br>
+	<p id="disponibilidad"></p>
+		<option value = "0" checked>Selecciona disponibilidad</option>
+<!-- 		<option value = "coche">coche</option> -->
+<!-- 		<option value = "avion">avion</option> -->
+<!-- 		<option value = "barco">barco</option> -->
 	
-<%--     <c:forEach items="${categorias}" var="categoria" > --%>
-<%--         <option value="${categoria.id}">${categoria.nombre}</option> --%>
-<!--     </c:forEach> -->
+    	<c:forEach items="${disponibilidades}" var="categoria" >
+       		 <option value="${disponibilidad.id}">${disponibilidad.nombre}</option>
+    	</c:forEach>
     
 </select><br>
 </div>
 
-<div id="listadoCategorias">categorias: </div>
+<div id="listadoDisponibilidad">Disponibilidad:<br> </div>
+
+<div>
+	<label for="transversales">Competencias Transversales:</label>
+<!-- 	ojo con el name, tiene que continuar en el campocompetencia anterior -->
+	<select name="campoCompetencia_" onchange="listarTransversales(this);"></br>
+	<p id="transversales"></p>
+		<option value = "0" checked>Selecciona Competencias</option>
+		<option value = "coche">coche</option>
+		<option value = "avion">avion</option>
+		<option value = "barco">barco</option>
+	
+   		<c:forEach items="${competencias}" var="competencia" >
+        	<option value="${competencia.id}">${competencia.nombre}</option>
+    	</c:forEach>
+    
+</select><br>
+</div>
+
+<div id="listadoTransversales">Competencias Transversales:<br> </div>
+
+<div>
+	<label for="conocimientos">Conocimientos</label>
+<!-- 	ojo con el name, tiene que continuar en el campocompetencia anterior -->
+	<select name="campoCompetencia_" onchange="listarConocimientos(this);"></br>
+	<p id="conocimientos"></p>
+		<option value = "0" checked>Selecciona Conocimientos</option>
+		<option value = "coche">coche</option>
+		<option value = "avion">avion</option>
+		<option value = "barco">barco</option>
+	
+    	<c:forEach items="${conocimientos}" var="categoria" >
+       		 <option value="${conocimiento.id}">${conocimiento.nombre}</option>
+    	</c:forEach>
+    
+</select><br>
+</div>
+
+<div id="listadoConocimientos">Conocimientos:<br> </div>
 
 
 
