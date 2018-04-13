@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 import javax.servlet.http.Part;
 
 public class GestorArchivos {	
@@ -28,6 +27,7 @@ public class GestorArchivos {
 			carpetaFotos.mkdir();
 		}
 		try {
+			
 			InputStream is = archivo.getInputStream();
 			FileOutputStream fos = new FileOutputStream(CARPETA_FOTOS+File.separator+ruta);
 			byte[] leidos = new byte[1024];

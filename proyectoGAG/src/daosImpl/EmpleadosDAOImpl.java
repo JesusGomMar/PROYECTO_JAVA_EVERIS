@@ -3,13 +3,14 @@ package daosImpl;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.ArrayList;
+import java.util.List;
 import utilidades.GestorArchivos;
-
 import com.mysql.jdbc.Statement;
-
+import modelo.Competencia;
 import modelo.Empleado;
 import constantesSQL.ConstantesSQL;
+import constantesSQL.SQLDinamicas;
 import daos.EmpleadosDAO;
 import daos.GenericDAO;
 
@@ -93,5 +94,77 @@ public class EmpleadosDAOImpl extends GenericDAO implements EmpleadosDAO{
 			System.out.println(e.getMessage());
 		}
 		desconectar();		
+	}
+	
+	@Override
+	public List<Competencia> obtenerCompetencias() {
+		conectar();
+		List<Competencia> competencias = new ArrayList<Competencia>();
+		
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SQL_SELECCION_COMPETENCIAS);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Competencia c = new Competencia();
+				c.setNombre(rs.getString("nombre"));
+				c.setId(rs.getInt("id"));
+				competencias.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("seguramente la sql seleccion competencias transversales este mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return competencias;
+	}
+
+	@Override
+	public List<Competencia> obtenerDisponibilidades() {
+		conectar();
+		List<Competencia> disponibilidades = new ArrayList<Competencia>();
+		
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SQL_SELECCION_DISPONIBILIDADES);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Competencia c = new Competencia();
+				c.setNombre(rs.getString("nombre"));
+				c.setId(rs.getInt("id"));
+				disponibilidades.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("seguramente la sql seleccion disponibilidades este mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return disponibilidades;
+	}
+
+	@Override
+	public List<Competencia> obtenerConocimientos() {
+		conectar();
+		List<Competencia> conocimientos = new ArrayList<Competencia>();
+		
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SQL_SELECCION_CONOCIMIENTOS);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Competencia c = new Competencia();
+				c.setNombre(rs.getString("nombre"));
+				c.setId(rs.getInt("id"));
+				conocimientos.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("seguramente la sql seleccion conocimientos este mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return conocimientos;
 	}	
 }
