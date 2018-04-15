@@ -35,4 +35,8 @@ function listarConocimientos(e){
 	
 }
 
+function borrarEmpleadoProyecto(){
+	
+}
+
 

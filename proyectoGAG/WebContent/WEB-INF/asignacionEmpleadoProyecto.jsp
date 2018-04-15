@@ -11,15 +11,34 @@
 <a href = "index.jsp">volver a inicio</a><br/>
 
 Asigna al Proyecto los empleados que cumplen los requisitos:<br/>
-<form action="ServletAsignarEmpleadoProyecto" method="post" >
-	
-	<div>
-		<c:forEach items="${empleadosfiltrados}" var="empleadofiltrado">
-			<div>
-				<input type="checkbox" >${empleadofiltrado.nombre}
-			</div>
-		</c:forEach>
-	</div>
 
+<form action="ServletAsignarEmpleadoProyecto" method="post" >
+
+	<table >
+
+		<tr>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>checkbox</th>
+		</tr>
+		<tr>
+    		<td>jose</td>
+    		<td>alonso perez</td>
+    		<td> <input type ="checkbox" name="checkbox" value="jose"> </td>
+  		</tr>
+<%-- 		<c:forEach items="${empleadosfiltrados}" var="empleadofiltrado"> --%>
+<!-- 			<tr> -->
+<%-- 				<td>${empleadofiltrado.nombre}<td> --%>
+<%-- 				<td>${empleadofiltrado.apellido}<td> --%>
+<!-- podemos dar value el id  del empleado filtrado a numero de empleado como return del checkbox-->
+<%-- 				<td> <input type ="checkbox" name="checkbox" value="${empleadofiltrado.id}"> </td> --%>
+<!-- 			</tr> -->
+<%-- 		</c:forEach> --%>
+
+	</table>
+	
+	<input type="submit" value= "Aceptar"/>
+	
+</form>	
 </body>
 </html>
