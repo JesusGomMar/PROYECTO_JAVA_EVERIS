@@ -5,8 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import utilidades.GestorArchivos;
+
 import com.mysql.jdbc.Statement;
+
 import modelo.Competencia;
 import modelo.Empleado;
 import constantesSQL.ConstantesSQL;
@@ -166,5 +169,183 @@ public class EmpleadosDAOImpl extends GenericDAO implements EmpleadosDAO{
 		}		
 		desconectar();
 		return conocimientos;
+	}
+
+	@Override
+	public int obtenerIdEmpleado(String usuario) {
+		conectar();
+		int idEmpleado=0;
+		try {
+			PreparedStatement ps = miConexion
+					.prepareStatement(ConstantesSQL.ID_EMPLEADO);
+			ps.setString(1, usuario);
+			ResultSet resultado = ps.executeQuery();
+			while(resultado.next()){
+				idEmpleado=resultado.getInt("id");
+				System.out.println("idEmpleado desde obtenerIdEmpleado: "+idEmpleado);
+			}
+			resultado.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("sql ID_EMPLEADO esta mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		System.out.println("id empleado EmpleadosDAOImpl="+idEmpleado);
+		return idEmpleado;
+	}
+
+	@Override
+	public Empleado obtenerEmpleadoPorId(int id) {
+		conectar();
+		Empleado empleado = new Empleado();
+		
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.OBTENER_EMPLEADO_POR_ID);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+				empleado.setNombre(rs.getString("nombre"));
+				empleado.setApellidos(rs.getString("apellidos"));
+				empleado.setLogin(rs.getString("login"));
+				empleado.setPassword(rs.getString("password"));
+				empleado.setComentario(rs.getString("comentario"));
+				empleado.setRutaImagen(GestorArchivos.rutaArchivo(rs.getInt("id")));
+				empleado.setId(id);
+			}
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("la sql de obtener empleado por id esta mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return empleado;
+	}
+
+	@Override
+	public List<Competencia> obtenerDisponibilidades(int id) {
+		conectar();
+		List<Competencia> disponibilidades = new ArrayList<Competencia>();
+		
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SELECCION_DISPONIBILIDADES_EMPLEADO);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Competencia c = new Competencia();
+				c.setNombre(rs.getString("nombre"));
+				c.setId(rs.getInt("id"));
+				disponibilidades.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("seguramente la sql seleccion disponibilidades este mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return disponibilidades;
+	}
+
+	@Override
+	public List<Competencia> obtenerConocimientos(int id) {
+		conectar();
+		List<Competencia> conocimientos = new ArrayList<Competencia>();
+		
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SELECCION_CONOCIMIENTOS_EMPLEADO);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Competencia c = new Competencia();
+				c.setNombre(rs.getString("nombre"));
+				c.setId(rs.getInt("id"));
+				conocimientos.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("seguramente la sql seleccion conocimientos este mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return conocimientos;
+	}
+
+	@Override
+	public List<Competencia> obtenerCompetencias(int id) {
+		conectar();
+		List<Competencia> competencias = new ArrayList<Competencia>();	
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SELECCION_COMPETENCIAS_EMPLEADO);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Competencia c = new Competencia();
+				c.setNombre(rs.getString("nombre"));
+				c.setId(rs.getInt("id"));
+				competencias.add(c);
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("seguramente la sql seleccion competencias transversales este mal");
+			System.out.println(e.getMessage());
+		}		
+		desconectar();
+		return competencias;
+	}
+
+	public void borrarEmpleado(int id) {
+		conectar();
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.BORRAR_EMPLEADO);
+			ps.setInt(1, id);
+			ps.execute();
+			ps.close();
+			GestorArchivos.borrarArchivo(id);
+		} catch (SQLException e) {
+			System.out.println("la sql de borrar empleado esta mal");
+			System.out.println(e.getMessage());
+		}
+		desconectar();		
+	}
+
+	@Override
+	public void borrarCompetenciasEmpleado(int id) {
+		conectar();
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.BORRAR_COMPETENCIAS_EMPLEADO);
+			ps.setInt(1, id);
+			ps.execute();
+			ps.close();
+			GestorArchivos.borrarArchivo(id);
+		} catch (SQLException e) {
+			System.out.println("la sql de borrar competencias empleado esta mal");
+			System.out.println(e.getMessage());
+		}
+		desconectar();		
+	}
+
+	@Override
+	public void guardarCambiosEmpleado(Empleado empleado) {
+		conectar();
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.GUARDAR_CAMBIOS_EMPLEADO);
+			ps.setString(1, empleado.getNombre());
+			ps.setString(2, empleado.getApellidos());
+			ps.setString(3, empleado.getLogin());
+			ps.setString(4, empleado.getPassword());
+			ps.setString(5, empleado.getComentario());
+			ps.setInt(6, empleado.getId());
+			ps.execute();						
+			ps.close();
+			GestorArchivos.guardarArchivo(empleado.getImagenSubida(), empleado.getId()+".jpg");
+		} catch (SQLException e) {
+			System.out.println("la sql guardar cambios empleado esta mal");
+			System.out.println(e.getMessage());
+		}
+		desconectar();
+		
 	}	
 }

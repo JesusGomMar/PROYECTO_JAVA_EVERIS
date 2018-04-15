@@ -29,6 +29,8 @@ public class ServletIdentificacion extends HttpServlet {
 			System.out.println("administrador ok");
 		}else if(empleadosDAO.identificarEmpleado(usuario, pass)){
 			request.getSession().setAttribute("empleado", "ok");
+			int idEmpleado = empleadosDAO.obtenerIdEmpleado(usuario);
+			request.setAttribute("idEmpleado", idEmpleado);
 			request.getRequestDispatcher("loginEmpleadoOk.jsp").forward(request, response);
 			System.out.println("empleado ok");
 		}else{

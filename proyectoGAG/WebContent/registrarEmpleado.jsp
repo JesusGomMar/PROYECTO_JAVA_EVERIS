@@ -8,7 +8,7 @@
 <title>Registro Empleado</title>
 </head>
 <body>
-<a href = "index.jsp">volver a inicio</a><br/>
+<a href = "menuEmpleado.jsp">volver a inicio</a><br/>
 
 Introduce los datos de Empleado:<br/>
 <form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >
@@ -40,11 +40,7 @@ Introduce los datos de Empleado:<br/>
 	<label for="disponibilidad">Disponibilidad Horaria</label>
 	<select name="campoCompetencia_0" onchange="listarDisponibilidad(this);"><br>
 	<p id="disponibilidad"></p>
-		<option value = "0" checked>Selecciona disponibilidad</option>
-<!-- 		<option value = "coche">coche</option> -->
-<!-- 		<option value = "avion">avion</option> -->
-<!-- 		<option value = "barco">barco</option> -->
-	
+		<option value = "0" checked>Selecciona disponibilidad</option>	
     	<c:forEach items="${disponibilidades}" var="disponibilidad" >
        		 <option value="${disponibilidad.id}" id = "${disponibilidad.nombre}">${disponibilidad.nombre}</option>
     	</c:forEach>
@@ -59,9 +55,7 @@ Introduce los datos de Empleado:<br/>
 <!-- 	ojo con el name, tiene que continuar en el campocompetencia anterior -->
 	<select name="campoCompetencia_" onchange="listarTransversales(this);"></br>
 	<p id="transversales"></p>
-		<option value = "0" checked>Selecciona Competencias</option>
-		
-	
+		<option value = "0" checked>Selecciona Competencias</option>	
    		<c:forEach items="${competencias}" var="competencia" >
         	<option value="${competencia.id}" id = "${competencia.nombre}">${competencia.nombre}</option>
     	</c:forEach>
