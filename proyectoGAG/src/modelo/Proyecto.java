@@ -2,7 +2,7 @@ package modelo;
 
 public class Proyecto {
 	private int id;
-	private String nombre;
+	private String proyecto;
 	private String comentario;
 	
 	public Proyecto() {
@@ -10,7 +10,7 @@ public class Proyecto {
 
 	public Proyecto(String nombre, String comentario) {
 		super();
-		this.nombre = nombre;
+		this.proyecto = nombre;
 		this.comentario = comentario;
 	}
 
@@ -22,12 +22,12 @@ public class Proyecto {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getProyecto() {
+		return proyecto;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setProyecto(String proyecto) {
+		this.proyecto = proyecto;
 	}
 
 	public String getComentario() {
@@ -40,7 +40,9 @@ public class Proyecto {
 
 	@Override
 	public String toString() {
-		return "Proyecto [id=" + id + ", nombre=" + nombre + ", comentario="
-				+ comentario + "]";
+		return "Proyecto [id=" + id + ", proyecto=" + proyecto
+				+ ", comentario=" + comentario + "]";
 	}
+
+	
 }
