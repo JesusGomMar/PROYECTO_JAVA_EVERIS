@@ -3,7 +3,7 @@ package constantesSQL;
 
 import java.util.List;
 
-public class SQLDinamicas {
+public class SQLDinamicas {	
 	public static String sqlCompetencias(List<String> idsCompetencias) {
 		 
 		String sql = "SELECT nombre, apellidos, comentario ,id_proyecto, id FROM tabla_empleado where id in (select id_empleado from tabla_empleado_competencia where id_competencia in (";

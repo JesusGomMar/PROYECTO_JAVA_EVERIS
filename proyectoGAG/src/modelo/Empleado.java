@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 import javax.servlet.http.Part;
 
 public class Empleado {
@@ -13,6 +15,8 @@ public class Empleado {
 	private String rutaImagen;
 	private int idProyecto;
 	
+	private List<String> idsCompetencias;
+	
 	public Empleado() {
 	}
 
@@ -25,6 +29,16 @@ public class Empleado {
 		this.password = password;
 		this.comentario = comentario;
 		this.imagenSubida = imagenSubida;
+	}
+
+	
+	
+	public List<String> getIdsCompetencias() {
+		return idsCompetencias;
+	}
+
+	public void setIdsCompetencias(List<String> idCompetencias) {
+		this.idsCompetencias = idCompetencias;
 	}
 
 	public int getId() {
@@ -101,10 +115,18 @@ public class Empleado {
 
 	@Override
 	public String toString() {
+		
+		String idsCompetenciasString="";
+		for (String idc : idsCompetencias) {
+			idsCompetenciasString += idc;
+		}
+		
 		return "Empleado [id=" + id + ", nombre=" + nombre + ", apellidos="
 				+ apellidos + ", login=" + login + ", password=" + password
 				+ ", comentario=" + comentario + ", imagenSubida="
 				+ imagenSubida + ", rutaImagen=" + rutaImagen + ", idProyecto="
-				+ idProyecto + "]";
+				+ idProyecto + ", idCompetencias=" + idsCompetenciasString + "]";
 	}
+
+	
 }
