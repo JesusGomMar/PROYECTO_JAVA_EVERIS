@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 <!-- usamos jsp para evitar que si nos cambian la url accedan sin meter user y pass -->
-<%-- <c:if test="${sessionScope.admin == null}"> --%>
-<%-- 	<jsp:forward page="login.jsp"></jsp:forward> --%>
-<%-- </c:if> --%>
+<c:if test="${sessionScope.admin == null}">
+	<jsp:forward page="login.jsp"></jsp:forward>
+</c:if>
 
 <!-- hacemos las llamadas a las diferentes opciones de administracion -->
 <!-- para registrar proyecto mandamos a un jsp que mandara todo a un servlet -->
