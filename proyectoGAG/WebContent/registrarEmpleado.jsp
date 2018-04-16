@@ -30,7 +30,7 @@ Introduce los datos de Empleado:<br/>
 </div>
 <div>
 	<label for="password">Password</label></br>
-	<input type="password" size="30" id="password "name="campoPassword" placeholder="Contraseña">	
+	<input type="password" size="30" id="password "name="campoPassword" placeholder="ContraseÃ±a">	
 </div>
 
 <div>
@@ -44,7 +44,7 @@ Introduce los datos de Empleado:<br/>
 	<p id="disponibilidad">
 		<option value = "0" checked>Selecciona disponibilidad</option>
 
-    	<c:forEach items="${disponibilidades}" var="categoria" >
+    	<c:forEach items="${disponibilidades}" var="disponibilidad" >
        		 <option value="${disponibilidad.id}" name="${disponibilidad.nombre}">${disponibilidad.nombre}</option>
     	</c:forEach>
     </p>
@@ -76,7 +76,7 @@ Introduce los datos de Empleado:<br/>
 	<p id="conocimientos">
 		<option value = "0" checked>Selecciona Conocimientos</option>
 	
-    	<c:forEach items="${conocimientos}" var="categoria" >
+    	<c:forEach items="${conocimientos}" var="conocimiento" >
        		 <option value="${conocimiento.id}" name="${conocimiento.nombre}">${conocimiento.nombre}</option>
     	</c:forEach>
     </p>
