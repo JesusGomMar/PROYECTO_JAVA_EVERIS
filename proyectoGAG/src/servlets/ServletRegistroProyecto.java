@@ -17,12 +17,12 @@ public class ServletRegistroProyecto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nombre = request.getParameter("campoNombre");
-		String comentario = request.getParameter("campoComentario");
+			String proyecto = request.getParameter("campoNombreProyecto");
+		String comentario = request.getParameter("campoComentarioProyecto");
 		
-		Proyecto proyecto = new Proyecto(nombre, comentario);
+		Proyecto proyectos = new Proyecto(proyecto, comentario);
 		ProyectosDAO proyectosDAO = new ProyectosDAOImpl();
-		proyectosDAO.registrarProyecto(proyecto);
+		proyectosDAO.registrarProyecto(proyectos);
 		
 		request.getRequestDispatcher("registroProyectoOk.jsp").forward(request, response);
 	}
