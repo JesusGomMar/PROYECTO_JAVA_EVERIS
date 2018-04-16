@@ -19,5 +19,6 @@ public class ConstantesSQL {
 	public static final String GUARDAR_CAMBIOS_EMPLEADO = "update tabla_empleado set nombre=?, apellidos=?, login=?, password=?, comentario=? where id=?";
 
 	public static final String INSERCION_COMPETENCIAS_EMPLEADO = "insert into tabla_empleado_competencia (id_empleado,id_competencia) values (?,?)";
-	public static final String SELECCIONAR_COMPETENCIA_EMPLEADO = "SELECT nombre FROM tabla_competencia where tabla_competencia.id in (select id_competencia from tabla_empleado_competencia where id_empleado = ?) and tipo = ?";//"SELECT nombre FROM tabla_competencia where id in (select id_competencia from tabla_empleado_competencia where id_empleado = ?) and tipo = ?";
+	public static final String SELECCIONAR_COMPETENCIA_EMPLEADO = "SELECT nombre FROM tabla_competencia where tabla_competencia.id in (select id_competencia from tabla_empleado_competencia where id_empleado = ?) and tipo = ?";
+	public static final String SELECCION_PROYECTOS = "select * from tabla_proyecto";
 }
