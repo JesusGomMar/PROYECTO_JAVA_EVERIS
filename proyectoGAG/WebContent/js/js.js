@@ -1,7 +1,8 @@
 a=1;
 function listarDisponibilidad(e){
 	
-	var opcionSeleccionada = e.options[e.selectedIndex].name;
+	var opcionSeleccionada = e.options[e.selectedIndex].id;
+	var idSeleccionada = e.options[e.selectedIndex].value;
 	//alert("he seleccionado: " + opcionSeleccionada);
 	
 	document.getElementsById("listadoDisponibilidad").innerHTML += opcionSeleccionada+" "+
@@ -12,7 +13,8 @@ function listarDisponibilidad(e){
 }
 
 function listarTransversales(e){
-	var opcionSeleccionada = e.options[e.selectedIndex].name;
+	var opcionSeleccionada = e.options[e.selectedIndex].id;
+	var idSeleccionada = e.options[e.selectedIndex].value;
 	//alert("he seleccionado: " + opcionSeleccionada);
 	
 	document.getElementById("listadoTransversales").innerHTML += opcionSeleccionada+" "+
@@ -24,7 +26,8 @@ function listarTransversales(e){
 }
 
 function listarConocimientos(e){
-	var opcionSeleccionada = e.options[e.selectedIndex].name;
+	var opcionSeleccionada = e.options[e.selectedIndex].id;
+	var idSeleccionada = e.options[e.selectedIndex].value;
 	//alert("he seleccionado: " + opcionSeleccionada);
 	
 	document.getElementById("listadoConocimientos").innerHTML += opcionSeleccionada+" "+

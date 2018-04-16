@@ -1,4 +1,4 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 <title>Registro Empleado</title>
 </head>
 <body>
-<a href = "index.jsp">volver a inicio</a><br/>
+<a href = "menuEmpleado.jsp">Volver al Menu</a><br/>
 
 Introduce los datos de Empleado:<br/>
 <form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >

@@ -19,21 +19,20 @@ Edita los empleados de un proyecto:<br/>
 		<tr>
 			<th>Nombre</th>
 			<th>Apellidos</th>
-			<th>checkbox</th>
+			<th>Borrar</th>
 		</tr>
-		<tr>
-    		<td>jose</td>
-    		<td>alonso perez</td>
-    		<td> <button type="button" name="borrar" value="jose" onclick="alert('vas a borrar a este empleado del proyecto')">Borrar</button> </td>
-  		</tr>
-<%-- 		<c:forEach items="${empleadosProyecto}" var="empleadoProyecto"> --%>
-<!-- 			<tr> -->
-<%-- 				<td>${empleadoProyecto.nombre}<td> --%>
-<%-- 				<td>${empleadoProyecto.apellido}<td> --%>
-<!-- podemos dar value el id  del empleado filtrado a numero de empleado como return del button-->
-<%-- 				<td> <button type="button" name="borrar"  onclick="borrarEmpleadoProyecto()">Borrar</button> </td> --%>
-<!-- 			</tr> -->
-<%-- 		</c:forEach> --%>
+<!-- 		<tr> -->
+<!--     		<td>jose</td> -->
+<!--     		<td>alonso perez</td> -->
+<!--     		<td> <button type="button" name="borrar" value="jose" onclick="alert('vas a borrar a este empleado del proyecto')">Borrar</button> </td> -->
+<!--   		</tr> -->
+		<c:forEach items="${empleadosProyecto}" var="empleadoProyecto">
+			<tr>
+				<td>${empleadoProyecto.nombre}<td>
+				<td>${empleadoProyecto.apellido}<td>
+				<td> <button type="button" name="borrar"  onclick="borrarEmpleadoProyecto()">Borrar</button> </td>
+			</tr>
+		</c:forEach>
 
 	</table>
 	

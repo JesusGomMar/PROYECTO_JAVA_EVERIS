@@ -4,12 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registro Empleado OK</title>
+<title>Perfil borrado</title>
 </head>
 <body>
-
-Gracias por Registrte ${empleado.nombre}<br/>
-<a href="index.jsp">volver al Menu</a>
-
+TU PERFIL HA SIDO ELIMINADO<br/>
+<a href = "ServletLogOut">SALIR</a>&nbsp; <br/>
 </body>
 </html>

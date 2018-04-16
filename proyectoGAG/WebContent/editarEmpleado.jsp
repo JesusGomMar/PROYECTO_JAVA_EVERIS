@@ -28,10 +28,10 @@
 	<input type="text" size="30" id="apellidos" name="campoApellidos" value="${empleadoAEditar.apellidos}"/>
 </div>
 
-<div>
-	<label for="proyecto">Proyecto</label></br>
-	<input type="text" size="30" id="proyecto" name="campoProyecto" value="${empleadoAEditar.proyecto}"/>
-</div>
+<!-- <div> -->
+<!-- 	<label for="proyecto">Proyecto</label></br> -->
+<%-- 	<input type="text" size="30" id="proyecto" name="campoProyecto" value="${empleadoAEditar.proyecto}"/> --%>
+<!-- </div> -->
 
 <div>
 	<label for="usuario">Usuario</label></br>

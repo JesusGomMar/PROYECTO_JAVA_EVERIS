@@ -6,5 +6,5 @@
 </c:if>
 
 <!-- hacemos las llamadas a las diferentes opciones de empleado -->
-<a href = "editarEmpleado.jsp">Editar Empleado</a> &nbsp; </br>
-<a href = "ServletLogOut">SALIR</a>&nbsp; </br>
+<a href = "ServletPerfilEmpleado?id=${idEmpleado}">Mi Perfil</a> </br>
+<a href = "ServletLogOut">SALIR</a> </br>
