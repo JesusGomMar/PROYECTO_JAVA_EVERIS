@@ -10,93 +10,95 @@
 
 </head>
 <body>
-<a href = "menuEmpleado.jsp">Volver al Menu</a><br/>
 
-Introduce los datos de Empleado:<br/>
-<form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >
+<div class="container">
+	<a href = "menuEmpleado.jsp">Volver al Menu</a><br/>
 
-<div>
-	<label for="nombre">Nombre</label></br>
-	<input type="text" size="30" id="nombre" name="campoNombre" placeholder="Nombre">
-</div>
-<div>
-	<label for="apellidos">Apellidos</label></br>
-	<input type="text" size="30" id="apellidos" name="campoApellidos" placeholder="Apellidos"/>
-</div>
+	<h1>Introduce los datos de Empleado:</h1>
+	<form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >
 
-<div>
-	<label for="usuario">Usuario</label></br>
-	<input type="text" size="30" id="usuario "name="campoUsuario" placeholder="Usuario">	
-</div>
-<div>
-	<label for="password">Password</label></br>
-	<input type="password" size="30" id="password "name="campoPassword" placeholder="Contraseña">	
-</div>
+	<div class="form-group">
+		<label for="nombre">Nombre</label></br>
+		<input type="text" size="30" id="nombre" name="campoNombre" placeholder="Nombre">
+	</div>
+	<div class="form-group">
+		<label for="apellidos">Apellidos</label></br>
+		<input type="text" size="30" id="apellidos" name="campoApellidos" placeholder="Apellidos"/>
+	</div>
 
-<div>
-	<label for="comentario">Comentario</label></br>
-	<textarea  rows= "4" columns= "40" id="comentario" name="campoComentario"placeholder="Comentario"></textarea>
-</div>
+	<div class="form-group">
+		<label for="usuario">Usuario</label></br>
+		<input type="text" size="30" id="usuario "name="campoUsuario" placeholder="Usuario">	
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label></br>
+		<input type="password" size="30" id="password "name="campoPassword" placeholder="Contraseña">	
+	</div>
 
-<div>
-	<label for="disponibilidad">Disponibilidad Horaria</label>
-	<select name="campoCompetencia_0" onchange="listarDisponibilidad(this);"><br>
-	<p id="disponibilidad">
-		<option value = "0" checked>Selecciona disponibilidad</option>
+	<div class="form-group">
+		<label for="comentario">Comentario</label></br>
+		<textarea  rows= "4" columns= "40" id="comentario" name="campoComentario"placeholder="Comentario"></textarea>
+	</div>
 
-    	<c:forEach items="${disponibilidades}" var="categoria" >
-       		 <option value="${disponibilidad.id}" name="${disponibilidad.nombre}">${disponibilidad.nombre}</option>
-    	</c:forEach>
-    </p>
+	<div class="form-group">
+		<label for="disponibilidad">Disponibilidad Horaria</label>
+		<select name="campoCompetencia_0" onchange="listarDisponibilidad(this);"><br>
+		<p id="disponibilidad">
+			<option value = "0" checked>Selecciona disponibilidad</option>
+
+    		<c:forEach items="${disponibilidades}" var="disponibilidad" >
+     	  		 <option value="${disponibilidad.id}" id="${disponibilidad.nombre}">${disponibilidad.nombre}</option>
+    		</c:forEach>
+   		</p>
     
-</select><br>
-</div>
+		</select><br>
+	</div>
 
-<div id="listadoDisponibilidad">Disponibilidad horaria:<br> </div>
+	<div id="listadoDisponibilidad">Disponibilidad horaria:<br> </div>
 
-<div>
-	<label for="transversales">Competencias Transversales:</label>
-	<select name="campoCompetencia_" onchange="listarTransversales(this);"></br>
-	<p id="transversales">
-		<option value = "0" checked>Selecciona Competencias</option>
+	<div class="form-group">
+		<label for="transversales">Competencias Transversales:</label>
+		<select name="campoCompetencia_" onchange="listarTransversales(this);"></br>
+		<p id="transversales">
+			<option value = "0" checked>Selecciona Competencias</option>
 	
-   		<c:forEach items="${competencias}" var="competencia" >
-        	<option value="${competencia.id}" name="${competencia.nombre}">${competencia.nombre}</option>
-    	</c:forEach>
-    </p>
+  			<c:forEach items="${competencias}" var="competencia" >
+  		      	<option value="${competencia.id}" id="${competencia.nombre}">${competencia.nombre}</option>
+  		 	</c:forEach>
+   		</p>
     
-</select><br>
-</div>
+		</select><br>
+	</div>
 
-<div id="listadoTransversales">Competencias Transversales:<br> </div>
+	<div id="listadoTransversales">Competencias Transversales: </div>
 
-<div>
-	<label for="conocimientos">Conocimientos</label>
-	<select name="campoCompetencia_" onchange="listarConocimientos(this);"></br>
-	<p id="conocimientos">
-		<option value = "0" checked>Selecciona Conocimientos</option>
+	<div class="form-group">
+		<label for="conocimientos">Conocimientos</label>
+		<select name="campoCompetencia_" onchange="listarConocimientos(this);"></br>
+		<p id="conocimientos">
+			<option value = "0" checked>Selecciona Conocimientos</option>
 	
-    	<c:forEach items="${conocimientos}" var="categoria" >
-       		 <option value="${conocimiento.id}" name="${conocimiento.nombre}">${conocimiento.nombre}</option>
-    	</c:forEach>
-    </p>
+    		<c:forEach items="${conocimientos}" var="conocimiento" >
+  	     		 <option value="${conocimiento.id}" id="${conocimiento.nombre}">${conocimiento.nombre}</option>
+ 		   	</c:forEach>
+   		</p>
     
-</select><br>
-</div>
+		</select><br>
+	</div>
 
-<div id="listadoConocimientos">Conocimientos:<br> </div>
+	<div id="listadoConocimientos">Conocimientos: </div>
 
 
 
-<div>
-	<label for="fotografia">Fotografia:</label></br>
- 	<input type="file" id="imagen" name= "campoImagen">
-</div>
+	<div class="form-group">
+		<label for="fotografia">Fotografia:</label></br>
+ 		<input type="file" id="imagen" name= "campoImagen">
+	</div>
 	
-<input type="submit" value= "Aceptar"/>
+	<input type="submit" value= "Aceptar"/>
 
 </form>
-
+</div>
 <script src="./js/js.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>

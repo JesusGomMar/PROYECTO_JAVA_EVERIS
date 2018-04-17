@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div>
+<div class="container">
 Gracias por Registrar un Proyecto
 </div>
 <a href="index.jsp">volver al Menu</a>

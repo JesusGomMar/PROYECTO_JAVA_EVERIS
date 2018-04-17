@@ -9,25 +9,28 @@
 
 </head>
 <body>
-<div>
-	Introduce tus datos para identificarte:
-</div>
-<div style="color: red">&nbsp;${mensaje}</div>
+<div class="container">
+	<div class="form-group">
+		<h1>Introduce tus datos para identificarte:</h1>
+	</div>
+	<div style="color: red">&nbsp;${mensaje}</div>
 
-<form action="ServletIdentificacion" method="post">
-	<div>
-		<label for="campoUsuario">Usuario</label><br>
-		<input type="text" size= "30" id="campoUsuario" name="campoUsuario" placeholder="Usuario">
-	</div>
-	<div>
-		<label for="campoPass">Contraseña:</label><br>
-		<input type="password" size="30" id="campoPass" name="campoPass" placeholder="Contraseña">
-	</div>
-	<input type="submit" value="ENTRAR"/>
-	<div>
+	<form action="ServletIdentificacion" method="post">
+		<div class="form-group">
+			<label for="campoUsuario">Usuario</label><br>
+			<input type="text" size= "30" id="campoUsuario" name="campoUsuario" placeholder="Usuario">
+		</div>
+		<div class="form-group">
+			<label for="campoPass">Contraseña:</label><br>
+			<input type="password" size="30" id="campoPass" name="campoPass" placeholder="Contraseña">
+		</div class="form-group">
+		<input type="submit" value="ENTRAR"/>
+		<div>
 		<a href = "ServletPreparaRegistroEmpleado">Registrarse</a>&nbsp;
-	</div>
+		</div>
 </form>
+
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

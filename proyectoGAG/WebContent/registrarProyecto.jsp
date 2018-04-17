@@ -11,72 +11,77 @@
 </head>
 <body>
 
-<a href = "index.jsp">volver a inicio</a><br/>
+<div class="container">
+	<a href = "index.jsp">volver a inicio</a><br/>
+	<h1>
+		Introduce nombre del Proyecto:
+	</h1>
+	<form action="ServletRegistroProyecto" method="post" >
 
-Introduce nombre del Proyecto:<br/>
-<form action="ServletRegistroProyecto" method="post" >
+	<div class="form-group">
+		<label for="nombre">Nombre</label></br>
+		<input type="text" size="30" id="nombreProyecto" name="campoNombreProyecto" placeholder="Nombre del Proyecto">
+	</div>
 
-<div>
-	<label for="nombre">Nombre</label></br>
-	<input type="text" size="30" id="nombreProyecto" name="campoNombreProyecto" placeholder="Nombre del Proyecto">
-</div>
+	<div class="form-group">
+		<label for="comentario">Comentario</label></br>
+		<textarea  rows= "4" columns= "40" id="comentarioProyecto" name="campoComentarioProyecto"placeholder="Comentario"></textarea>
+	</div>
 
-<div>
-	<label for="comentario">Comentario</label></br>
-	<textarea  rows= "4" columns= "40" id="comentarioProyecto" name="campoComentarioProyecto"placeholder="Comentario"></textarea>
-</div>
+	<h2>Requisitos Proyecto</h2>
 
-<p>Requisitos Proyecto</p>
+	<div class="form-group">
+		<label for="disponibilidad">Disponibilidad Horaria</label>
+		<select name="campoCompetenciaProyecto_0" onchange="listarDisponibilidad(this);"><br>
+		<p id="disponibilidad">
+			<option value = "0" checked>Selecciona disponibilidad</option>
 
-<div>
-	<label for="disponibilidad">Disponibilidad Horaria</label>
-	<select name="campoCompetenciaProyecto_0" onchange="listarDisponibilidad(this);"><br>
-	<p id="disponibilidad">
-		<option value = "0" checked>Selecciona disponibilidad</option>
-
-    	<c:forEach items="${disponibilidades}" var="categoria" >
-       		 <option value="${disponibilidad.id}" name="${disponibilidad.nombre}" >${disponibilidad.nombre}</option>
-    	</c:forEach>
-    </p>
+    		<c:forEach items="${disponibilidades}" var="disponibilidad" >
+  	     		 <option value="${disponibilidad.id}" id="${disponibilidad.nombre}" >${disponibilidad.nombre}</option>
+   		 	</c:forEach>
+   		</p>
     
-</select><br>
-</div>
+		</select><br>
+	</div>
 
-<div id="listadoDisponibilidad">Disponibilidad horaria:<br> </div>
+	<div id="listadoDisponibilidad">Disponibilidad horaria:</div>
 
-<div>
-	<label for="transversales">Competencias Transversales:</label>
-	<select name="campoCompetenciaProyecto_" onchange="listarTransversales(this);"></br>
-	<p id="transversales">
-		<option value = "0" checked>Selecciona Competencias</option>
+	<div class="form-group">
+		<label for="transversales">Competencias Transversales:</label>
+		<select name="campoCompetenciaProyecto_" onchange="listarTransversales(this);"></br>
+		<p id="transversales">
+			<option value = "0" checked>Selecciona Competencias</option>
 	
-   		<c:forEach items="${competencias}" var="competencia" >
-        	<option value="${competencia.id}" name="${competencia.nombre}">${competencia.nombre}</option>
-    	</c:forEach>
-    </p>
+  	 		<c:forEach items="${competencias}" var="competencia" >
+  		      	<option value="${competencia.id}" id="${competencia.nombre}">${competencia.nombre}</option>
+ 		   	</c:forEach>
+ 	   </p>
     
-</select><br>
-</div>
+		</select><br>
+	</div>
 
-<div id="listadoTransversales">Competencias Transversales:<br> </div>
+	<div id="listadoTransversales">Competencias Transversales:<br> </div>
 
-<div>
-	<label for="conocimientos">Conocimientos</label>
-	<select name="campoCompetenciaProyecto_" onchange="listarConocimientos(this);"></br>
-	<p id="conocimientos">
-		<option value = "0" checked>Selecciona Conocimientos</option>
+	<div class="form-group">
+		<label for="conocimientos">Conocimientos</label>
+		<select name="campoCompetenciaProyecto_" onchange="listarConocimientos(this);"></br>
+		<p id="conocimientos">
+			<option value = "0" checked>Selecciona Conocimientos</option>
 	
-    	<c:forEach items="${conocimientos}" var="categoria" >
-       		 <option value="${conocimiento.id}" name="${conocimiento.nombre}">${conocimiento.nombre}</option>
-    	</c:forEach>
-    </p>
+  		  	<c:forEach items="${conocimientos}" var="conocimiento" >
+       			<option value="${conocimiento.id}" id="${conocimiento.nombre}">${conocimiento.nombre}</option>
+    		</c:forEach>
+  	  </p>
     
-</select><br>
+		</select><br>
+	</div>
+
+	<div id="listadoConocimientos">Conocimientos:<br> </div>
+
+	<input type="submit" value= "Siguiente"/>
+</form>
 </div>
 
-<div id="listadoConocimientos">Conocimientos:<br> </div>
-
-<input type="submit" value= "Siguiente"/>
 
 <script src="./js/js.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

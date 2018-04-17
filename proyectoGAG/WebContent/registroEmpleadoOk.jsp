@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div>
+<div class="container">
 Gracias por Registrte ${empleado.nombre}
 </div>
 <a href="index.jsp">volver al Menu</a>

@@ -11,9 +11,9 @@
 </head>
 <body>
 <a href = "ServletLogOut">SALIR</a>&nbsp; <br/>
-<div>
+<div class="container">
 	<div>
-		<img src="${empleado.rutaImagen}" height="200"/>
+		<img src="${empleado.rutaImagen}" class="img-circle" height="200"/>
 	</div>
 	<div>
 	Nombre:${empleado.nombre }
