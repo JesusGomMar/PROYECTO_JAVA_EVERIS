@@ -27,12 +27,14 @@ public class ServletEditarEmpleado extends HttpServlet {
 		List<Competencia> disponibilidad = empleadosDAO.obtenerDisponibilidades(id);
 		List<Competencia> competencia = empleadosDAO.obtenerCompetencias(id);
 		List<Competencia> conocimiento = empleadosDAO.obtenerConocimientos(id);
-		request.setAttribute("disponibilidades", disponibilidad);
-		request.setAttribute("competencias", competencia);
-		request.setAttribute("conocimientos", conocimiento);
+		request.setAttribute("disponibilidad", disponibilidad);
+		request.setAttribute("competencia", competencia);
+		request.setAttribute("conocimiento", conocimiento);
+		System.out.println("conocimiento="+conocimiento);
 		request.setAttribute("disponibilidades", disponibilidades);
 		request.setAttribute("competencias", competencias);
 		request.setAttribute("conocimientos", conocimientos);
+		System.out.println("conocimientos="+conocimientos);
 		request.setAttribute("empleadoAEditar", empleadoAEditar);
 		request.getRequestDispatcher("editarEmpleado.jsp").forward(request, response);
 	}

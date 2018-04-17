@@ -17,17 +17,12 @@ Asigna al Proyecto los empleados que cumplen los requisitos:<br/>
 <form action="ServletAsignarEmpleadoProyecto" method="post" >
 
 	<table >
-
 		<tr>
 			<th>Nombre</th>
 			<th>Apellidos</th>
 			<th>checkbox</th>
 		</tr>
-<!-- 		<tr> -->
-<!--     		<td>jose</td> -->
-<!--     		<td>alonso perez</td> -->
-<!--     		<td> <input type ="checkbox" name="checkbox" value="jose"> </td> -->
-<!--   		</tr> -->
+
 		<c:forEach items="${empleadosfiltrados}" var="empleadofiltrado">
 			<tr>
 				<td>${empleadofiltrado.nombre}<td>

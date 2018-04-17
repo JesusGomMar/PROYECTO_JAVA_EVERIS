@@ -52,7 +52,7 @@
 		<option value = "0" checked>Selecciona disponibilidad</option>
 
     	<c:forEach items="${disponibilidades}" var="disponibilidad" >
-       		 <option value="${disponibilidad.id}" name="${disponibilidad.nombre}">${disponibilidad.nombre}</option>
+       		 <option value="${disponibilidad.id}" id="${disponibilidad.nombre}">${disponibilidad.nombre}</option>
     	</c:forEach>
     </p>
     
@@ -61,8 +61,12 @@
 
 <div id="listadoDisponibilidad">Disponibilidad horaria:<br>
 		<c:forEach items="${disponibilidad}" var="disponibilidad_empl" >
-       		 <p value="${disponibilidad_empl.id}" action= "ServletBorrarCompetencia">${disponibilidad_empl.nombre}</p>
-       		 <input type="submit" value= "Borrar"/>
+			<c:if test="${disponibilidad_empl!= null}">
+       		 	<div>${disponibilidad_empl.nombre} 
+      			 	<button type="button" name="borrar"  onclick="ServletBorrarCompetencia=${disponibilidad_empl.id}">BORRAR</button>
+       			 </div>
+       			 
+       		 </c:if>
 		</c:forEach>
 
  </div>
@@ -74,7 +78,7 @@
 		<option value = "0" checked>Selecciona Competencias</option>
 	
    		<c:forEach items="${competencias}" var="competencia" >
-        	<option value="${competencia.id}" name="${competencia.nombre}">${competencia.nombre}</option>
+        	<option value="${competencia.id}" id="${competencia.nombre}">${competencia.nombre}</option>
     	</c:forEach>
     </p>
     
@@ -82,9 +86,14 @@
 </div>
 
 <div id="listadoTransversales">Competencias Transversales:<br> 
+		
 		<c:forEach items="${competencia}" var="competencia_empl" >
-       		 <p value="${competencia_empl.id}" action= "ServletBorrarCompetencia" >${competencia_empl.nombre}</p>
-       		 <input type="submit" value= "Borrar"/>
+		<c:if test="${competencia_empl!=null}">
+       		 <div>${competencia_empl.nombre}
+       		 	
+       		 	<button type="button" name="borrar"  onclick="ServletBorrarCompetencia=${competencia_empl.id}">BORRAR</button>
+       		 </div>
+       	</c:if>
 		</c:forEach>
 </div>
 
@@ -95,7 +104,7 @@
 		<option value = "0" checked>Selecciona Conocimientos</option>
 	
     	<c:forEach items="${conocimientos}" var="conocimiento" >
-       		 <option value="${conocimiento.id}" name="${conocimiento.nombre}">${conocimiento.nombre}</option>
+       		 <option value="${conocimiento.id}" id="${conocimiento.nombre}">${conocimiento.nombre}</option>
     	</c:forEach>
     </p>
     
@@ -103,17 +112,19 @@
 </div>
 
 <div id="listadoConocimientos">Conocimientos:<br> 
-		<c:forEach items="${conocimiento}" var="categoria" >
-       		 <p value="${conocimiento_empl.id}" action= "ServletBorrarCompetencia">${conocimiento_empl.nombre}
-       		 <input type="submit" value= "Borrar"/>
-       		 </p>
-		</c:forEach>
+	<c:forEach items="${conocimiento}" var="conocimiento_empl" >
+		<c:if test="${conocimiento_empl!= null}">
+      		 <div>${conocimiento_empl.nombre} 
+      		 	<button type="button" name="borrar"  onclick="ServletBorrarCompetencia=${conocimiento_empl.id}">BORRAR</button>
+      		 </div>
+      	</c:if>
+	</c:forEach>
 </div>
 
 
 <div>
 	<label for="comentario">Comentario</label></br>
-	<textarea  rows= "4" columns= "40" id="comentario" name="campoComentario" value="${empleadoAEditar.comentario}"></textarea>
+	<textarea  rows= "4" columns= "40" id="comentario" name="campoComentario" ><c:out value="${empleadoAEditar.comentario}"></c:out></textarea>
 </div>
 
 
@@ -123,8 +134,8 @@
 
 </form>
  
- <script src="./js/js.js"></script>
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./js/js.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
