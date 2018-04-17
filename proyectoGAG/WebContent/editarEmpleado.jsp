@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Edicion Empleado</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -37,10 +39,12 @@
 	<label for="usuario">Usuario</label></br>
 	<input type="text" size="30" id="usuario "name="campoUsuario" value="${empleadoAEditar.login}">	
 </div>
+
 <div>
 	<label for="password">Password</label></br>
 	<input type="password" size="30" id="password "name="campoPassword" value="${empleadoAEditar.password}">	
 </div>
+
 <div>
 	<label for="disponibilidad">Disponibilidad Horaria</label>
 	<select name="campoCompetencia_0" onchange="listarDisponibilidad(this);"><br>
@@ -48,7 +52,7 @@
 		<option value = "0" checked>Selecciona disponibilidad</option>
 
     	<c:forEach items="${disponibilidades}" var="disponibilidad" >
-       		 <option value="${disponibilidad.id}">${disponibilidad.nombre}</option>
+       		 <option value="${disponibilidad.id}" name="${disponibilidad.nombre}">${disponibilidad.nombre}</option>
     	</c:forEach>
     </p>
     
@@ -70,7 +74,7 @@
 		<option value = "0" checked>Selecciona Competencias</option>
 	
    		<c:forEach items="${competencias}" var="competencia" >
-        	<option value="${competencia.id}">${competencia.nombre}</option>
+        	<option value="${competencia.id}" name="${competencia.nombre}">${competencia.nombre}</option>
     	</c:forEach>
     </p>
     
@@ -91,7 +95,7 @@
 		<option value = "0" checked>Selecciona Conocimientos</option>
 	
     	<c:forEach items="${conocimientos}" var="conocimiento" >
-       		 <option value="${conocimiento.id}">${conocimiento.nombre}</option>
+       		 <option value="${conocimiento.id}" name="${conocimiento.nombre}">${conocimiento.nombre}</option>
     	</c:forEach>
     </p>
     
@@ -109,7 +113,7 @@
 
 <div>
 	<label for="comentario">Comentario</label></br>
-	<textarea  rows= "4" columns= "40" id="comentario" name="campoComentario"><c:out value="${empleadoAEditar.comentario}" /></textarea>
+	<textarea  rows= "4" columns= "40" id="comentario" name="campoComentario" value="${empleadoAEditar.comentario}"></textarea>
 </div>
 
 
@@ -120,5 +124,8 @@
 </form>
  
  <script src="./js/js.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>

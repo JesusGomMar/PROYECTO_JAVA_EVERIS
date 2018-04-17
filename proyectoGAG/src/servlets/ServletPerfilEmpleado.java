@@ -22,6 +22,7 @@ public class ServletPerfilEmpleado extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		EmpleadosDAO empleadosDAO = new EmpleadosDAOImpl();
 		Empleado empleado = empleadosDAO.obtenerEmpleadoPorId(id);
+		System.out.println("obtener disponibilidades de id: " + id);
 		List<Competencia> disponibilidades = empleadosDAO.obtenerDisponibilidades(id);
 		List<Competencia> competencias = empleadosDAO.obtenerCompetencias(id);
 		List<Competencia> conocimientos = empleadosDAO.obtenerConocimientos(id);

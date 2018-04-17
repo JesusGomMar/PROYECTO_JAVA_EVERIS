@@ -20,4 +20,5 @@ public interface EmpleadosDAO {
 	void borrarEmpleado(int id);
 	void borrarCompetenciasEmpleado(int id);
 	void guardarCambiosEmpleado(Empleado empleado);
+	void registrarCompetenciasEmpleado(Empleado empleado);
 }
