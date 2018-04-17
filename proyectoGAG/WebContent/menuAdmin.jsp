@@ -8,7 +8,7 @@
 
 <!-- hacemos las llamadas a las diferentes opciones de administracion -->
 <!-- para registrar proyecto mandamos a un jsp que mandara todo a un servlet -->
-<a href = "registrarProyecto.jsp">Crear Proyecto</a>&nbsp; </br>
+<a href = "ServletPreparaRegistroProyecto">Crear Proyecto</a>&nbsp; </br>
 <!-- para listar y gestionar proyectos llamamos a un servlet q los lista y vuelca en gestionarProyectos.jsp -->
 <a href = "ServletListadoProyectos">Listado Proyectos</a>&nbsp; </br>
 

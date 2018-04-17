@@ -30,30 +30,27 @@ Introduce nombre del Proyecto:<br/>
 
 <div>
 	<label for="disponibilidad">Disponibilidad Horaria</label>
-	<select name="campoCompetenciaProyecto_0" onchange="listarDisponibilidad(this);"><br>
-	<p id="disponibilidad">
-		<option value = "0" checked>Selecciona disponibilidad</option>
-
-    	<c:forEach items="${disponibilidades}" var="categoria" >
-       		 <option value="${disponibilidad.id}" name="${disponibilidad.nombre}" >${disponibilidad.nombre}</option>
+	<select name="campoDisponibilidad" onchange="listarDisponibilidad(this);"><br>
+	<p id="disponibilidad"></p>
+		<option value = "0" checked>Selecciona disponibilidad</option>	
+    	<c:forEach items="${disponibilidades}" var="disponibilidad" >
+       		 <option value="${disponibilidad.id}" id = "${disponibilidad.nombre}">${disponibilidad.nombre}</option>
     	</c:forEach>
-    </p>
     
 </select><br>
 </div>
 
-<div id="listadoDisponibilidad">Disponibilidad horaria:<br> </div>
+<div id="listadoDisponibilidad">Disponibilidad:<br> </div>
 
 <div>
 	<label for="transversales">Competencias Transversales:</label>
-	<select name="campoCompetenciaProyecto_" onchange="listarTransversales(this);"></br>
-	<p id="transversales">
-		<option value = "0" checked>Selecciona Competencias</option>
-	
+<!-- 	ojo con el name, tiene que continuar en el campocompetencia anterior -->
+	<select name="campoTransversales" onchange="listarTransversales(this);"></br>
+	<p id="transversales"></p>
+		<option value = "0" checked>Selecciona Competencias</option>	
    		<c:forEach items="${competencias}" var="competencia" >
-        	<option value="${competencia.id}" name="${competencia.nombre}">${competencia.nombre}</option>
+        	<option value="${competencia.id}" id = "${competencia.nombre}">${competencia.nombre}</option>
     	</c:forEach>
-    </p>
     
 </select><br>
 </div>
@@ -62,14 +59,14 @@ Introduce nombre del Proyecto:<br/>
 
 <div>
 	<label for="conocimientos">Conocimientos</label>
-	<select name="campoCompetenciaProyecto_" onchange="listarConocimientos(this);"></br>
-	<p id="conocimientos">
+<!-- 	ojo con el name, tiene que continuar en el campocompetencia anterior -->
+	<select name="campoConocimiento" onchange="listarConocimientos(this);"></br>
+	<p id="conocimientos"></p>
 		<option value = "0" checked>Selecciona Conocimientos</option>
 	
-    	<c:forEach items="${conocimientos}" var="categoria" >
-       		 <option value="${conocimiento.id}" name="${conocimiento.nombre}">${conocimiento.nombre}</option>
+    	<c:forEach items="${conocimientos}" var="conocimiento" >
+       		 <option value="${conocimiento.id}" id = "${conocimiento.nombre}">${conocimiento.nombre}</option>
     	</c:forEach>
-    </p>
     
 </select><br>
 </div>
