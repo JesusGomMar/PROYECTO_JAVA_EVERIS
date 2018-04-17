@@ -7,10 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listado Empleados</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <div class="container">
+
+	<div>
+		<jsp:include page="menuEmpleado.jsp"></jsp:include>
+	</div>
+	
 	<div class="form-group">
 		<h1>Listado de Empleados</h1>
 	</div>
@@ -29,7 +34,7 @@
 					<td><img src="${listadoEmpleado.rutaImagen}" class="img-circle" height = "200" /></td>
 					<td>${listadoEmpleado.nombre}<td>
 					<td>${listadoEmpleado.apellidos}<td>
-					<td> <input type ="checkbox" name="checkbox" value="${listadoEmpleado.id}"> </td>
+					<td> <input type ="checkbox" name="checkBox_${listadoEmpleado.id}" value="${listadoEmpleado.id}"> </td>
 				</tr>
 			</c:forEach>
 

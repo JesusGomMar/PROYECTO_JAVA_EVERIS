@@ -8,14 +8,17 @@
 <title>Proyectos</title>
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./css/style.css">
 <body>
 <div class="container">
+	<div>
+		<jsp:include page="menuAdmin.jsp"></jsp:include>
+	</div>
 	<div class="form-group">
 		<h1>Listado de Proyectos </h1>
 	</div>
 
-	<form action="ServletListarProyecto" method="post" >
+	<form action="ServletEmpleadosProyecto" method="post" >
 
 		<table class="table table-bordered">
 			<tr>

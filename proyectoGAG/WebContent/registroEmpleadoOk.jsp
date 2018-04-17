@@ -6,13 +6,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registro Empleado OK</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+	<div>
+		<jsp:include page="menuEmpleado.jsp"></jsp:include>
+	</div>
 <div class="container">
+
 Gracias por Registrte ${empleado.nombre}
 </div>
-<a href="index.jsp">volver al Menu</a>
+<!-- <a href="index.jsp">volver al Menu</a> -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
