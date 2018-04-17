@@ -421,4 +421,31 @@ public class EmpleadosDAOImpl extends GenericDAO implements EmpleadosDAO {
 		desconectar();
 
 	}
+
+	@Override
+	public List<Empleado> obtenerEmpleados() {
+		conectar();
+		List<Empleado> empleados = new ArrayList<Empleado>();
+
+		PreparedStatement ps;
+		try {
+			ps = miConexion.prepareStatement(ConstantesSQL.OBTENER_EMPLEADOS);
+			ResultSet resultado = ps.executeQuery();
+
+			while (resultado.next()) {
+				Empleado empleado = new Empleado();
+				empleado.setNombre(resultado.getString("nombre"));
+				empleado.setApellidos(resultado.getString("apellidos"));
+				empleado.setComentario(resultado.getString("comentario"));
+				empleado.setIdProyecto(resultado.getInt("id_proyecto"));
+				empleado.setId(resultado.getInt("id"));
+				empleados.add(empleado);
+			}
+		} catch (SQLException e) {
+			System.out.println("error sql OBTENER EMPLEADOS");
+			System.out.println(e.getMessage());
+		}
+		desconectar();
+		return empleados;
+	}
 }

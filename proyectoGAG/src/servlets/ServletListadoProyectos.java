@@ -25,7 +25,7 @@ public class ServletListadoProyectos extends HttpServlet {
 		request.setAttribute("proyectos", proyectos);
 		System.out.println("proyecto: " +proyectos);
 		
-		request.getRequestDispatcher("listadoProyectos.jsp").forward(request,response);
+		request.getRequestDispatcher("listarProyectos.jsp").forward(request,response);
 	}
 
 }
