@@ -19,6 +19,11 @@ public class ServletPerfilEmpleado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//validar que este logado
+				if(request.getSession().getAttribute("empleado")==null){
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+				}
+		
 		int id = Integer.parseInt(request.getParameter("id"));
 		EmpleadosDAO empleadosDAO = new EmpleadosDAOImpl();
 		Empleado empleado = empleadosDAO.obtenerEmpleadoPorId(id);

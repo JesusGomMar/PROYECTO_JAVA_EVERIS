@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,12 +25,44 @@ public class ServletRegistroProyecto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//validar que este logado
+		if(request.getSession().getAttribute("admin")==null){
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		
+		
 		String proyecto = request.getParameter("campoNombreProyecto");
 		String comentario = request.getParameter("campoComentarioProyecto");
 		
+		//validacion
+		int validar = 0;
+		
+		String expresionRegularProyecto="[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—\\s]{3,15}";
+		Pattern patternProyecto = Pattern.compile(expresionRegularProyecto);
+		Matcher matcherProyecto = patternProyecto.matcher(proyecto);
+		if (matcherProyecto.matches()){}	else{
+			System.out.println("error nombre");
+			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
+			validar=1;
+		}
+		
+		String expresionRegularComentario="{0,400}";
+		Pattern patternComentario = Pattern.compile(expresionRegularProyecto);
+		Matcher matcherComentario = patternProyecto.matcher(proyecto);
+		if (matcherProyecto.matches()){}	else{
+			System.out.println("error nombre");
+			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
+			validar=1;
+		}
+		
+		
+		if (validar==0){
 		Proyecto proyectos = new Proyecto(proyecto, comentario);
 		ProyectosDAO proyectosDAO = new ProyectosDAOImpl();
 		proyectosDAO.registrarProyecto(proyectos);
+		}else {
+			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
+		}
 		
 		//parte de empleados
 		Enumeration<String> namesRecibidos = request.getParameterNames();

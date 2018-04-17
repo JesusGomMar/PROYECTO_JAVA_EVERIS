@@ -17,6 +17,8 @@ public class ServletPreparaRegistroProyecto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//validar que este logado
+				
 		EmpleadosDAO empleadosDAO = new EmpleadosDAOImpl();
 		List<Competencia> disponibilidades = empleadosDAO.obtenerDisponibilidades();
 		List<Competencia> competencias = empleadosDAO.obtenerCompetencias();

@@ -19,6 +19,12 @@ public class ServletListadoEmpleados extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//validar que este logado
+				if(request.getSession().getAttribute("empleado")==null){
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+				}
+		
+		
 		System.out.println("ServletListadoEmpleado");
 		List<String> valueDeCadaSelect = new ArrayList<String>();
 		for (String idCompetencia : valueDeCadaSelect) {
