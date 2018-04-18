@@ -19,7 +19,7 @@
 	<h1>
 		Introduce nombre del Proyecto:
 	</h1>
-	<form action="ServletRegistroProyecto" method="post" onsubmit="return validacionFormularioRegistroProyecto()">
+	<form action="ServletRegistroProyecto" onsubmit="return validacionFormularioRegistroProyecto()" method="post" >
 	
 
 	<div class="form-group">
@@ -54,7 +54,7 @@
 
 	<div class="form-group">
 		<label for="transversales">Competencias Transversales:</label>
-		<select name="campoTransversales" onchange="listarTransversales(this);"></br>
+		<select name="campoCompetencias" onchange="listarTransversales(this);"></br>
 		<p id="transversales">
 			<option value = "0" checked>Selecciona Competencias</option>
 	
@@ -86,7 +86,13 @@
 
 	<input type="submit" value= "Siguiente"/>
 </form>
+
+<div>
+		<jsp:include page="footer.jsp"></jsp:include>
 </div>
+</div>
+
+
 
 
 <script src="./js/js.js"></script>

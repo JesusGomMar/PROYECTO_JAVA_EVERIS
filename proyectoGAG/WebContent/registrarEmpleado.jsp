@@ -12,10 +12,16 @@
 <body>
 
 <div class="container">
+	<div id="nav-bar">
+		<ul>
+			<li><a href = "index.jsp">Inicio</a></li>
+			
+		</ul>
+</div>
 
 	<h1>Introduce los datos de Empleado:</h1>
-	<form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >
-	onsubmit="return validacionFormularioRegistroEmpleado()"
+	<form action="ServletRegistroEmpleado" onsubmit="return validacionFormularioRegistroEmpleado()" method="post" enctype="multipart/form-data" >
+	
 
 	<div class="form-group">
 		<label for="nombre">Nombre</label></br>
@@ -98,6 +104,10 @@
 	<input type="submit" value= "Aceptar"/>
 
 </form>
+
+<div>
+		<jsp:include page="footer.jsp"></jsp:include>
+</div>
 </div>
 <script src="./js/js.js"></script>
 <script src="./js/validacionRegistroEmpleado.js"></script>

@@ -134,6 +134,9 @@
 	</div>
 
 </form>
+<div>
+		<jsp:include page="footer.jsp"></jsp:include>
+</div>
 </div>
  
  <script src="./js/js.js"></script>
