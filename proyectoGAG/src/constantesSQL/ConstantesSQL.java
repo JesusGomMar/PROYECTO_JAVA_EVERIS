@@ -20,7 +20,7 @@ public class ConstantesSQL {
 
 	public static final String INSERCION_COMPETENCIAS_EMPLEADO = "insert into tabla_empleado_competencia (id_empleado,id_competencia) values (?,?)";
 	public static final String SELECCIONAR_COMPETENCIA_EMPLEADO = "SELECT nombre FROM tabla_competencia where tabla_competencia.id in (select id_competencia from tabla_empleado_competencia where id_empleado = ?) and tipo = ?";
-	public static final String SELECCION_PROYECTOS = "select * from tabla_proyecto";
+	public static final String SELECCION_PROYECTOS = "select * from tabla_proyecto where id > 0";
 	public static final String OBTENER_EMPLEADOS = "select * from tabla_empleado";
 	public static final String ULTIMO_PROYECTO = "SELECT id FROM tabla_proyecto order by id desc limit 1";
 	public static final String ASIGNAR_PROYECTO = "UPDATE tabla_empleado set id_proyecto = ? where id = ?";
