@@ -47,9 +47,9 @@ public class ServletRegistroProyecto extends HttpServlet {
 		}
 		
 		String expresionRegularComentario="{0,400}";
-		Pattern patternComentario = Pattern.compile(expresionRegularProyecto);
-		Matcher matcherComentario = patternProyecto.matcher(proyecto);
-		if (matcherProyecto.matches()){}	else{
+		Pattern patternComentario = Pattern.compile(expresionRegularComentario);
+		Matcher matcherComentario = patternComentario.matcher(comentario);
+		if (matcherComentario.matches()){}	else{
 			System.out.println("error nombre");
 			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
 			validar=1;
