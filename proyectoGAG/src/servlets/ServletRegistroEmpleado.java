@@ -76,7 +76,7 @@ public class ServletRegistroEmpleado extends HttpServlet {
 				Pattern patternLogin = Pattern.compile(expresionRegularLogin);
 				Matcher matcherLogin = patternLogin.matcher(login);
 				if (matcherLogin.matches()){}	else{
-					System.out.println("error apellido");
+					System.out.println("error login");
 					request.getRequestDispatcher("registrarEmpleado.jsp").forward(request, response);
 					validar=1;
 				}
@@ -85,16 +85,16 @@ public class ServletRegistroEmpleado extends HttpServlet {
 				Pattern patternPassword = Pattern.compile(expresionRegularPassword);
 				Matcher matcherPassword = patternPassword.matcher(password);
 				if (matcherPassword.matches()){}	else{
-					System.out.println("error apellido");
+					System.out.println("error password");
 					request.getRequestDispatcher("registrarEmpleado.jsp").forward(request, response);
 					validar=1;
 				}
 				
-				String expresionRegularComentario="{0,300}";
+				String expresionRegularComentario="[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—*!?ø°\\s]{0,400}";
 				Pattern patternComentario = Pattern.compile(expresionRegularComentario);
 				Matcher matcherComentario = patternComentario.matcher(comentario);
 				if (matcherComentario.matches()){}	else{
-					System.out.println("error apellido");
+					System.out.println("error comentario");
 					request.getRequestDispatcher("registrarEmpleado.jsp").forward(request, response);
 					validar=1;
 				}

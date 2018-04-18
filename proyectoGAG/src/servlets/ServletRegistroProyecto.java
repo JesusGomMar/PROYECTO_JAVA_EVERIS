@@ -41,17 +41,17 @@ public class ServletRegistroProyecto extends HttpServlet {
 		Pattern patternProyecto = Pattern.compile(expresionRegularProyecto);
 		Matcher matcherProyecto = patternProyecto.matcher(proyecto);
 		if (matcherProyecto.matches()){}	else{
-			System.out.println("error nombre");
-			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
+			System.out.println("error proyecto");
+			request.getRequestDispatcher("registrarProyecto.jsp").forward(request, response);
 			validar=1;
 		}
 		
-		String expresionRegularComentario="{0,400}";
+		String expresionRegularComentario="[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—*!?ø°\\s]{0,400}";
 		Pattern patternComentario = Pattern.compile(expresionRegularComentario);
 		Matcher matcherComentario = patternComentario.matcher(comentario);
 		if (matcherComentario.matches()){}	else{
-			System.out.println("error nombre");
-			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
+			System.out.println("error comentario");
+			request.getRequestDispatcher("registrarProyecto.jsp").forward(request, response);
 			validar=1;
 		}
 		
@@ -61,7 +61,7 @@ public class ServletRegistroProyecto extends HttpServlet {
 		ProyectosDAO proyectosDAO = new ProyectosDAOImpl();
 		proyectosDAO.registrarProyecto(proyectos);
 		}else {
-			request.getRequestDispatcher("registroProyecto.jsp").forward(request, response);
+			request.getRequestDispatcher("registrarProyecto.jsp").forward(request, response);
 		}
 		
 		//parte de empleados
