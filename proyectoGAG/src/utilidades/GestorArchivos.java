@@ -4,16 +4,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
 import javax.servlet.http.Part;
 
 public class GestorArchivos {	
 	private static final String CARPETA_FOTOS = "fotos";
 	
 	public static String rutaArchivo(int id){
-		String ruta = CARPETA_FOTOS+File.separator+id+".jpg";	
-		File f = new File(ruta);
-		System.out.println(f.getAbsolutePath());
-		return f.getAbsolutePath();
+		String ruta = "."+File.separator+CARPETA_FOTOS+File.separator+id+".jpg";
+		return ruta;
+//		File f = new File(ruta);
+//		System.out.println(f.getAbsolutePath());
+//		return f.getAbsolutePath();
 	}
 	
 	//metodo que sobre un archivo subido le asigna una ruta
@@ -22,7 +24,7 @@ public class GestorArchivos {
 			System.out.println("no hay archivo,no guardo imagen");
 			return;
 		}
-		File carpetaFotos = new File(CARPETA_FOTOS);
+		File carpetaFotos = new File("."+File.separator+CARPETA_FOTOS);
 		if(!carpetaFotos.exists()){
 			carpetaFotos.mkdir();
 		}
