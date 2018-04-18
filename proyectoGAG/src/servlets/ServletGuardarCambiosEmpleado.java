@@ -25,9 +25,7 @@ public class ServletGuardarCambiosEmpleado extends HttpServlet {
 		String comentario = request.getParameter("campoComentario");
 		Part imagen = request.getPart("campoImagen");
 		String id = request.getParameter("campoId");
-		//ahora deberiamos validar todos los datos
-		
-		//fin parte validacion
+
 		Empleado empleado = new Empleado(nombre, apellidos, login, password, comentario, imagen);
 		empleado.setId(Integer.parseInt(id));
 		EmpleadosDAO empleadosDAO = new EmpleadosDAOImpl();
