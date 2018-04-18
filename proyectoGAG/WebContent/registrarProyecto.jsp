@@ -19,8 +19,8 @@
 	<h1>
 		Introduce nombre del Proyecto:
 	</h1>
-	<form action="ServletRegistroProyecto" method="post" >
-	onsubmit="return validacionFormularioRegistroProyecto()"
+	<form action="ServletRegistroProyecto" method="post" onsubmit="return validacionFormularioRegistroProyecto()">
+	
 
 	<div class="form-group">
 		<label for="nombre">Nombre</label></br>
@@ -38,7 +38,7 @@
 
 	<div class="form-group">
 		<label for="disponibilidad">Disponibilidad Horaria</label>
-		<select name="campoCompetenciaProyecto_0" onchange="listarDisponibilidad(this);"><br>
+		<select name="campoDisponibilidad" onchange="listarDisponibilidad(this);"><br>
 		<p id="disponibilidad">
 			<option value = "0" checked>Selecciona disponibilidad</option>
 
@@ -54,7 +54,7 @@
 
 	<div class="form-group">
 		<label for="transversales">Competencias Transversales:</label>
-		<select name="campoCompetenciaProyecto_" onchange="listarTransversales(this);"></br>
+		<select name="campoTransversales" onchange="listarTransversales(this);"></br>
 		<p id="transversales">
 			<option value = "0" checked>Selecciona Competencias</option>
 	
@@ -70,7 +70,7 @@
 
 	<div class="form-group">
 		<label for="conocimientos">Conocimientos</label>
-		<select name="campoCompetenciaProyecto_" onchange="listarConocimientos(this);"></br>
+		<select name="campoConocimientos" onchange="listarConocimientos(this);"></br>
 		<p id="conocimientos">
 			<option value = "0" checked>Selecciona Conocimientos</option>
 	

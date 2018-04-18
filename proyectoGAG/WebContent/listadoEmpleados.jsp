@@ -13,7 +13,7 @@
 <div class="container">
 
 	<div>
-		<jsp:include page="menuEmpleado.jsp"></jsp:include>
+		<jsp:include page="menuAdmin.jsp"></jsp:include>
 	</div>
 	
 	<div class="form-group">

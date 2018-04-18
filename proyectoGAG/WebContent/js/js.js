@@ -5,7 +5,7 @@ function listarDisponibilidad(e){
 	var idSeleccionada = e.options[e.selectedIndex].value;
 	//alert("he seleccionado: " + opcionSeleccionada);
 	
-	document.getElementsById("listadoDisponibilidad").innerHTML += opcionSeleccionada+" "+
+	document.getElementById("listadoDisponibilidad").innerHTML += opcionSeleccionada+" "+
 	//esto es para agregar informacion de la categoria seleccionada para que le llegue al servlet
 	
 	"<input type='hidden' name='campoCompetencia_"+a+"' value='"+idSeleccionada+"' /><br>";

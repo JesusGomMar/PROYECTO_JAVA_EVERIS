@@ -12,9 +12,6 @@
 <body>
 
 <div class="container">
-	<div>
-		<jsp:include page="menuEmpleado.jsp"></jsp:include>
-	</div>
 
 	<h1>Introduce los datos de Empleado:</h1>
 	<form action="ServletRegistroEmpleado" method="post" enctype="multipart/form-data" >

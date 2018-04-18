@@ -28,8 +28,8 @@
 			</tr>
 			<c:forEach items="${proyectos}" var="listadoProyecto">
 				<tr>
-					<td>${listadoProyecto.proyecto}<td>
-					<td>${listadoProyecto.comentario}<td>
+					<td>${listadoProyecto.proyecto}</td>
+					<td>${listadoProyecto.comentario}</td>
 					<td> <button type="button" name="borrar"  onclick="ServletBorrarProyecto=${listadoProyecto.id}">Borrar</button> </td>
 				</tr>
 			</c:forEach>
