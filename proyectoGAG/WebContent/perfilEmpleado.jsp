@@ -7,13 +7,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Mi perfil</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<a href = "ServletLogOut">SALIR</a>&nbsp; <br/>
-<div>
+<!-- <a href = "ServletLogOut">SALIR</a>&nbsp; <br/> -->
+<div class="container">
+
 	<div>
-		<img src="${empleado.rutaImagen}" height="200"/>
+		<jsp:include page="menuEmpleado.jsp"></jsp:include>
+	</div>
+	<div>
+		<img src="${empleado.rutaImagen}" class="img-circle" height="200"/>
 	</div>
 	<div>
 	Nombre:${empleado.nombre }

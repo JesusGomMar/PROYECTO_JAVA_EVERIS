@@ -1,52 +1,26 @@
-.login-wrap {
-    position: relative;
-    margin: 0 auto;
-    background: #ecf0f1;
-    width: 350px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 10px #333;
-    padding: 15px;
-    
-    h2 {
-      text-align: center;
-      font-weight: 200;
-      font-size: 2em;
-      margin-top: 10px;
-      color: #34495e;
-    }
-    
-    .form {
-      padding-top: 20px;
-      
-      input[type="text"],
-      input[type="password"],
-      button {
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 25px;
-        height: 40px;
-        border-radius: 5px;
-        outline: 0;
-        -moz-outline-style: none;
-      }
-      
-      input[type="text"],
-      input[type="password"] {
-        border: 1px solid #bbb;
-        padding: 0 0 0 10px;
-        font-size: 14px;
-        &:focus {
-          border: 1px solid #3498db;
-        }
-      }
-      
-      a {
-        text-align: center;
-        font-size: 10px;
-        color: #3498db;
-        
-        p{
-          padding-bottom: 10px;
-        }
-        
-      }
+ul{
+	list-style-type: none;
+	margin: 0 ;
+	padding: 0;
+	overflow: hidden;
+	/*width: auto;
+	si pintamos aqui pinta toda la lista, no solo los bloques que definimos*/
+	
+}
+
+li{
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+	background-color: #333333; /*ponemos aqui el color para que no nos pinte toda la linea, para que pinte solo cada bloque definido*/
+}
+
+li a:hover {
+	background-color: #111111;
+}

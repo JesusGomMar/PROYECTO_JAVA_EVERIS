@@ -8,33 +8,35 @@
 <title>Proyectos</title>
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+<link rel="stylesheet" href="./css/style.css">
 <body>
+<div class="container">
+	<div>
+		<jsp:include page="menuAdmin.jsp"></jsp:include>
+	</div>
+	<div class="form-group">
+		<h1>Listado de Proyectos </h1>
+	</div>
 
-<div>
-Listado de Proyectos 
-</div>
+	<form action="ServletEmpleadosProyecto" method="post" >
 
-<form action="ServletEmpleadosProyecto" method="post" >
-
-	<table>
-		<tr>
-			<th>Nombre del Proyecto</th>
-			<th>Comentario</th>
-			<th>Editar</th>
-		</tr>
-		<c:forEach items="${proyectos}" var="listadoProyecto">
+		<table class="table table-bordered">
 			<tr>
-				<td>${listadoProyecto.proyecto}<td>
-				<td>${listadoProyecto.comentario}<td>
-				<td> <button type="button" name="borrar"  onclick="ServletBorrarProyecto=${listadoProyecto.id}">Borrar</button> </td>
+				<th>Nombre del Proyecto</th>
+				<th>Comentario</th>
+				<th>Editar</th>
 			</tr>
-		</c:forEach>
-	
-	
-	</table>
+			<c:forEach items="${proyectos}" var="listadoProyecto">
+				<tr>
+					<td>${listadoProyecto.proyecto}<td>
+					<td>${listadoProyecto.comentario}<td>
+					<td> <button type="button" name="borrar"  onclick="ServletBorrarProyecto=${listadoProyecto.id}">Borrar</button> </td>
+				</tr>
+			</c:forEach>
+		</table>
 
-</form>
+	</form>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
