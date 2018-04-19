@@ -1,0 +1,32 @@
+body{
+	background-image:url(../img/fondo.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0 ;
+	padding: 0;
+	overflow: hidden;
+	/*width: auto;
+	si pintamos aqui pinta toda la lista, no solo los bloques que definimos*/
+	
+}
+
+li{
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+	background-color:#333333 ; /*   ponemos aqui el color para que no nos pinte toda la linea, para que pinte solo cada bloque definido*/
+}
+
+li a:hover {
+	background-color: #111111;
+}
